@@ -10,10 +10,7 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
-    <script
-      src="https://kit.fontawesome.com/c8e4d183c2.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="index.js"></script>
     <script
       type="text/javascript"
@@ -28,7 +25,7 @@
     </script>
   </head>
   <body>
-    <section id="landing-page">
+    <section id="landing-page" onmousemove="moveBackground(event)">
       <nav>
         <figure>
           <img id="personal-logo" src="./assets/pdub_logo.png" alt="" />
@@ -37,13 +34,13 @@
           <li class="nav__link">
             <a
               href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()"
               >About</a
             >
           </li>
           <li class="nav__link">
             <a
-              href="#"
+              href="#projects"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
               >Projects</a
             >
@@ -51,11 +48,11 @@
           <li class="nav__link">
             <a
               href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black" onclick="toggleModal()"
               >Contact</a
             >
           </li>
-          <li class="nav__link click">
+          <li class="nav__link click" onclick="toggleContrast()">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
@@ -67,7 +64,7 @@
       <header class="header">
         <div class="header__content">
           <h1 class="title">Hey</h1>
-          <!-- <h1 class="title green">Im Raymond</h1> -->
+          <h1 class="title green">I'm Raymond</h1>
           <p class="header__para">
             I am a future <b class="green">Frontend Developer</b> and I'm
             excited to blend creativity and technology to build engaging,
@@ -79,7 +76,7 @@
             Music, Gaming and Production. I am also a Video Editor, Gamer,
             Adventure Seeker, Streamer, Tech geek.
             <br />
-            Here's a bit more <b class="green">about me</b>. You can click the
+            Here's a bit more <b class="green click" onclick="toggleModal()">about me</b>. You can click the
             button above to listen to my music. If you’d like to get in touch,
             feel free to say hello through any of the social links below or stop
             by my twitch channel to see if I'm live!
@@ -92,14 +89,16 @@
               <i class="fa-brands fa-github"></i>
             </a>
             <a href="" class="social__link click">
-              <i class="fas fa-file-pdf"></i>
+              <i class="fa-regular fa-file-pdf"></i>
             </a>
           </div>
         </div>
       </header>
-      <button class="mail__btn click" onclick="toggleModal()">
-        <i class="fas fa-envelope"></i>
-      </button>
+      <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+          <i class="fas fa-envelope"></i>
+        </button>
+      </a>
       <a href="#projects" class="scroll">
         <div class="scorll__icon click"></div>
       </a>
@@ -153,7 +152,7 @@
           </div>
         </div>
         <div class="modal__half modal__contact">
-          <i class="fas fa-times modal__exit click"></i>
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
           <h3 class="modal__title modal__title--contact">Let's have a chat.</h3>
           <h3 class="modal__sub-title modal__sub-title--contact">
             I'm currently open to new opportunities.
@@ -183,6 +182,15 @@
           </div>
         </div>
       </div>
+      <img src="./assets/semi circle.svg" class="shape shape--0">
+      <img src="./assets/circle.svg" class="shape shape--1">
+      <img src="./assets/squiggly.svg" class="shape shape--2">
+      <img src="./assets/circle.svg" class="shape shape--3">
+      <img src="./assets/triangle.svg" class="shape shape--4">
+      <img src="./assets/circle.svg" class="shape shape--5">
+      <img src="./assets/squiggly.svg" class="shape shape--6">
+      <img src="./assets/circle.svg" class="shape shape--7">
+      <img src="./assets/semi circle.svg" class="shape shape--8">
     </section>
     <section id="projects">
       <div class="container">
@@ -252,12 +260,14 @@
             </a>
             <a
               href="#"
+              onclick="toggleModal()"
               class="footer__social--link link__hover-effect link__hover-effect--white"
             >
-              Email
+              Contact
             </a>
             <a
-              href="#"
+              href="./assets/David Bragg Resume.pdf"
+              target="_blank"
               class="footer__social--link link__hover-effect link__hover-effect--white"
             >
               Resume
